@@ -1,0 +1,25 @@
+uuid: e9b119a8-8f1e-4f14-8f5e-f9747ad97cc5
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.article-categories
+  module:
+    - system
+  theme:
+    - mytheme
+id: articlecategories_2
+theme: mytheme
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'system_menu_block:article-categories'
+settings:
+  id: 'system_menu_block:article-categories'
+  label: 'Article Categories'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

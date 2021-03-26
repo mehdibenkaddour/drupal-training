@@ -1,0 +1,17 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/tiny-slider.css : {}
+      css/glightbox.min.css : {}
+      css/aos.css: {}
+      css/style.css: {}
+      css/styles.css: {}
+  js:
+    js/bootstrap.bundle.min.js: {}
+    js/tiny-slider.js: {}
+    js/glightbox.min.js: {}
+    js/aos.js: {}
+    js/navbar.js: {}
+    js/counter.js: {}
+    js/custom.js: {}

@@ -1,0 +1,8 @@
+uuid: d659a364-1674-42d6-9711-6eacd0163520
+langcode: en
+status: true
+dependencies: {  }
+id: article-categories
+label: 'Article Categories'
+description: 'the category of the article'
+locked: false

@@ -1,0 +1,12 @@
+uuid: a9cc5a7b-16d0-4cac-b45f-728459e12145
+langcode: en
+status: true
+dependencies: {  }
+id: author
+label: Author
+weight: 4
+is_admin: null
+permissions:
+  - 'create article content'
+  - 'delete own article content'
+  - 'edit own article content'

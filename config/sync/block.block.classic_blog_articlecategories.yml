@@ -1,0 +1,25 @@
+uuid: f3711681-199e-4714-b2f1-5018f2954f75
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.article-categories
+  module:
+    - system
+  theme:
+    - classic_blog
+id: classic_blog_articlecategories
+theme: classic_blog
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'system_menu_block:article-categories'
+settings:
+  id: 'system_menu_block:article-categories'
+  label: 'Article Categories'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

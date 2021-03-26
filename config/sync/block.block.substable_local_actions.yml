@@ -1,0 +1,20 @@
+uuid: 8a19991b-07f4-4474-a799-5bf9bbfa4163
+langcode: en
+status: true
+dependencies:
+  theme:
+    - substable
+_core:
+  default_config_hash: ffxthelqQF8xcr4GTG4HlaNNsluiHftN0pujmQpW0bQ
+id: substable_local_actions
+theme: substable
+region: header
+weight: 20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

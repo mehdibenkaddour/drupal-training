@@ -1,0 +1,18 @@
+uuid: cc11c4c5-3903-4e7f-86e5-4bdc9578c241
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'specific product'
+type: specific_product
+description: 'the content type for showing a specifc product'
+help: ''
+new_revision: true
+preview_mode: 2
+display_submitted: true
