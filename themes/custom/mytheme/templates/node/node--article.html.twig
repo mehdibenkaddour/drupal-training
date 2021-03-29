@@ -82,15 +82,14 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="text-center">
-                  {{dump(author_picture.url)}}
-                    {{author_picture.url}}
+                  <img src="{{ file_url(node.Owner.user_picture.0.entity.uri.value) }}" alt="Image" class="author-pic img-fluid rounded-circle mx-auto">
                 </div>
                 <span class="d-block text-center">{{ author_name }}</span>
                 <span class="date d-block text-center small text-uppercase text-black-50 mb-5">{{ date }}</span>
                 <h2 class="heading text-center">{{ label }}.</h2>
                 <p class="lead mb-4 text-center">Far far away, behind the word mountains, far from the countries Vokalia
                     and Consonantia, there live the blind texts.</p>
-                {{ content }}
+                {{content}}
                 <div class="row mt-5 pt-5 border-top">
                     <div class="col-12">
                         <span class="fw-bold text-black small mb-1">Share</span>

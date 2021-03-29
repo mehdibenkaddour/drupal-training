@@ -2,6 +2,8 @@ global-styling:
   version: 1.x
   css:
     theme:
+      fonts/icomoon/icomon.css : {}
+      fonts/flaticon/font/flaticon.css : {}
       css/tiny-slider.css : {}
       css/glightbox.min.css : {}
       css/aos.css: {}

@@ -1,0 +1,131 @@
+{#
+/**
+ * @file
+ * Default theme implementation for main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   JavaScript.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+  set classes = [
+    'view',
+    'view-' ~ 'block_1'|clean_class,
+    'view-id-' ~ 'block_1',
+    'view-display-id-' ~ 'block_1',
+    dom_id ? 'js-view-dom-id-' ~ 'block_1',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
+    </div>
+  {% endif %}
+  {% if exposed %}
+    <div class="view-filters form-group">
+      {{ exposed }}
+    </div>
+  {% endif %}
+  {% if attachment_before %}
+    <div class="attachment attachment-before">
+      {{ attachment_before }}
+    </div>
+  {% endif %}
+
+  {% if rows %}
+<div class="section pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="heading">Related</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+        {% for row in view.result %}
+            <div class="col-lg-12">
+                <div class="post-entry d-md-flex small-horizontal mb-5">
+                    <div class="me-md-5 thumbnail mb-3 mb-md-0">
+                        <img src="{{file_url(row._entity.fields.field_image.entity.uri.value)}}" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="content">
+                        <div class="post-meta mb-3">
+                            <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': row._entity.fields.field_category.entity.id}) }}" 
+                                class="category">{{row._entity.fields.field_category.entity.name.value}}</a>,
+                        </div>
+                        <h2 class="heading"><a href="{{ path('entity.node.canonical', {'node': row.nid}) }}">{{row._entity.fields.title.value}}</a></h2>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                            there live the blind texts.</p>
+                        <a href="#" class="post-author d-flex align-items-center">
+                            <div class="author-pic">
+                               <img src="{{file_url(row._relationship_entities.uid.user_picture.entity.uri.value)}}" alt="Image">
+                            </div>
+                            <div class="text">
+                                <strong>{{row._relationship_entities.uid.name.value}}</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+  {% elseif empty %}
+    <div class="view-empty">
+      {{ empty }}
+    </div>
+  {% endif %}
+
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
+  {% if attachment_after %}
+    <div class="attachment attachment-after">
+      {{ attachment_after }}
+    </div>
+  {% endif %}
+  {% if more %}
+    {{ more }}
+  {% endif %}
+  {% if footer %}
+    <div class="view-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+  {% if feed_icons %}
+    <div class="feed-icons">
+      {{ feed_icons }}
+    </div>
+  {% endif %}
+</div>

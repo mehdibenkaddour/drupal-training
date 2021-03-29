@@ -5,6 +5,8 @@ use Drupal\views\Views;
  */
 function mytheme_preprocess_page__front(array &$variables) {
   $variables['trendings'] = views_embed_view('trending', 'block_1');
+  $variables['recents'] = views_embed_view('content_recent', 'block_1');
+  $variables['popular'] = views_embed_view('popular_articles', 'block_1');
 }
 
 /** * @param array $suggestions * @param array $variables */ 
