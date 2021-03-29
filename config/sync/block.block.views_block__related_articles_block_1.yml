@@ -1,0 +1,33 @@
+uuid: 15110e74-1de2-4050-bd4c-83391a4e5430
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.related_articles
+  module:
+    - ctools
+    - views
+  theme:
+    - mytheme
+id: views_block__related_articles_block_1
+theme: mytheme
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:related_articles-block_1'
+settings:
+  id: 'views_block:related_articles-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,22 +1,22 @@
-uuid: 75630adc-7759-415c-b589-01702af4948c
+uuid: e2f11130-4786-47cc-9a15-975847a1704d
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.trending
+    - views.view.popular_articles
   module:
     - system
     - views
   theme:
     - mytheme
-id: views_block__trending_block_1
+id: views_block__popular_articles_block_1
 theme: mytheme
 region: content
-weight: -6
+weight: 0
 provider: null
-plugin: 'views_block:trending-block_1'
+plugin: 'views_block:popular_articles-block_1'
 settings:
-  id: 'views_block:trending-block_1'
+  id: 'views_block:popular_articles-block_1'
   label: ''
   provider: views
   label_display: visible
